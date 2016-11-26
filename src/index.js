@@ -8,6 +8,7 @@ import App from './components/app';
 import Landing from './components/Landing';
 import About from './components/About';
 import Contact from './components/Contact';
+
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -20,7 +21,7 @@ ReactDOM.render(
       <Route path="/" component={App}> 
       	<Route path="about" component={About} />
       	<Route path="contact" component={Contact} />
-
+  
      		<IndexRoute component={Landing}/>
       </Route>      
     </Router>

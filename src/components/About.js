@@ -7,7 +7,7 @@ class About extends Component {
 				
 				<p className="title">About <span className="brand">fishTails</span></p>
 
-				<hr className="hr-about"></hr>
+				<hr></hr>
 
 				<div className="text">
 
