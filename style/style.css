@@ -28,3 +28,36 @@ hr {
 	border-top: 1px solid #f8f8f8;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+.brand {
+	font-family: 'Shrikhand', cursive;
+	color: rgb(255, 71, 26);
+}
+
+#aboutBlock {
+	background-color: rgba(191, 191, 191, 0.8);
+	border: solid 10px rgba(255, 71, 26, 0.6);
+	width: 70%;	
+	color: black;
+	margin-top: 10%;
+}
+
+.paragraph1 {
+	border-left: solid 5px rgba(255, 71, 26, 0.6);
+	padding-left: 6px
+}
+
+.title {
+	margin-top: 20px;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.hr-about {
+	width: 95%;
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgb(52,152,219);
+}
+
+

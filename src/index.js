@@ -6,6 +6,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import App from './components/app';
 import Landing from './components/Landing';
+import About from './components/About';
+import Contact from './components/Contact';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -16,8 +18,11 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory}>
       <Route path="/" component={App}> 
-      <IndexRoute component={Landing}/>
+      	<Route path="about" component={About} />
+      	<Route path="contact" component={Contact} />
+
+     		<IndexRoute component={Landing}/>
       </Route>      
     </Router>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('.app'));
