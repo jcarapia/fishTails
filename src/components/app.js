@@ -6,9 +6,6 @@ export default class App extends Component {
     return (
       <div>
         <h4>App</h4>
-        <Link to="/users">Users</Link>
-        <hr />
-        {this.props.children}
       </div>
     );
   }
