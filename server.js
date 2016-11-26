@@ -6,14 +6,14 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const router = require('./router');
-const config = require('./config');
+//const config = require('./config');
 
 const port = process.env.PORT || 8080;
 const app = express();
 
 // DB setup
-const username = config.username;
-const password = config.password;
+const username = process.env.dbusername || config.username;
+const password = process.env.dbpassword || config.password;
 mongoose.connect('mongodb://'+username+':'+password+'@ds111188.mlab.com:11188/fishtails');
 
 // App setup
