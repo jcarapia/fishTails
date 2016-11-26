@@ -1,5 +1,5 @@
 const User = require('../models/user');
-//const config = require('../../config');
+
 const jwt = require('jwt-simple');
 const secret = process.env.secret
 
