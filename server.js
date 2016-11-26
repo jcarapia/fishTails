@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const router = require('./router');
 
-const config = require('./config');
+//const config = require('./config');
 
 
 const port = process.env.PORT || 8080;
@@ -24,7 +24,7 @@ app.use(cors());
 app.use(morgan('combined'));
 //any request that is coming is going to be parsed as if it were json
 app.use(bodyParser.json({type: '*/*'}));
-//router(app);
+router(app);
 
 app.use(express.static(__dirname));
 

@@ -9,18 +9,22 @@ class Signup extends Component {
 
 	handleFormSubmit(formProps) {
 		console.log(formProps);
+		this.props.signupUser(formProps);
 	};
 	
 
 	render() {
-
-		const {handleSubmit, fields: {username, password, passwordConfirm}} = this.props;
+		const {handleSubmit, fields: {username, email, password, passwordConfirm}} = this.props;
 
 		return (
 			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
 				<fieldset className="form-group">
-					<label>Email:</label>
+					<label>Username:</label>
 					<input className="form-control" {...username}/>
+				</fieldset>
+					<fieldset className="form-group">
+					<label>Email:</label>
+					<input className="form-control" {...email}/>
 				</fieldset>
 				<fieldset className="form-group">
 					<label>Password:</label>
@@ -38,5 +42,5 @@ class Signup extends Component {
 
 export default reduxForm({
 	form: 'signup',
-	fields: ['username', 'password', 'passwordConfirm'],
+	fields: ['username', 'email', 'password', 'passwordConfirm'],
 }, null, actions)(Signup);
