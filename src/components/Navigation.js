@@ -13,7 +13,7 @@ var Navigation = React.createClass({
 			        <span className="icon-bar"></span>
 			        <span className="icon-bar"></span>
 			      </button>
-			      <a className="navbar-brand" href="#"><span className="brand">fishTails</span></a>
+			      <a className="navbar-brand" href="/"><span className="brand">fishTails</span></a>
 			    </div>
 
 			    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -25,8 +25,8 @@ var Navigation = React.createClass({
 			      </ul>
 
 			      <ul className="nav navbar-nav navbar-right">
-			        <li><Link to="loginRegister"><i className="fa fa-user-plus" aria-hidden="true"></i> Signup</Link></li>
-			        <li><Link to="loginRegister"><i className="fa fa-user" aria-hidden="true"></i> Login</Link></li>
+			        <li><Link to="signup"><i className="fa fa-user-plus" aria-hidden="true"></i> Signup</Link></li>
+			        <li><Link to="signin"><i className="fa fa-user" aria-hidden="true"></i> Login</Link></li>
 			      </ul>
 			    </div>
 			    </div>
