@@ -2,8 +2,8 @@ import axios from 'axios';
 import {browserHistory} from 'react-router';
 import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_TALES} from './types';
 
-//const ROOT_URL = 'http://pacific-fjord-58728.herokuapp.com';
-const ROOT_URL = 'http://localhost:8080';
+const ROOT_URL = 'http://pacific-fjord-58728.herokuapp.com';
+//const ROOT_URL = 'http://localhost:8080';
 
 export function signupUser({username, email, password}){
 	console.log('signupUser(): ',username, email, password)
@@ -40,5 +40,27 @@ export function addTale({title, story, picture}) {
 			})
 			.catch(error => console.log(error.response.data.error));
 	}
+};
+
+// export function fetchTales(){
+// 	//console.log('fetch tales action')
+// 	return function(dispatch){
+// 		axios.get(`${ROOT_URL}/tales`)
+// 			.then(response => {
+// 				console.log('fetchTales action: ',response.data)
+// 				dispatch({type: FETCH_TALES, payload: response.data});
+// 			})
+// 			.catch(error => console.log('error!!'));
+// 	}
+// }
+
+export function fetchTales(){
+	//console.log('fetch tales action')
+
+	const tales =	axios.get(`${ROOT_URL}/tales`);
+
+	console.log('promise tales', tales)		
+	return {type: FETCH_TALES, payload: tales};
+	
 }
 

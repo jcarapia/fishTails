@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
+import reduxPromise from 'redux-promise';
 
 import App from './components/app';
 import Landing from './components/Landing';
@@ -16,7 +17,7 @@ import AddTale from './components/AddTale';
 
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(reduxThunk, reduxPromise)(createStore);
 
 //require('./style/style');
 
