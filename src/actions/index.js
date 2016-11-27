@@ -3,7 +3,7 @@ import {browserHistory} from 'react-router';
 import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_TALES} from './types';
 
 const ROOT_URL = 'http://pacific-fjord-58728.herokuapp.com';
-//const ROOT_URL = 'http://localhost:8080';
+
 
 export function signupUser({username, email, password}){
 	console.log('signupUser(): ',username, email, password)
