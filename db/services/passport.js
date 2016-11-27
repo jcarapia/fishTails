@@ -1,6 +1,6 @@
 const passport = require('passport');
 const User = require('../models/user');
-//const config = require('../../config');
+const config = require('../../config');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
@@ -8,12 +8,12 @@ const LocalStrategy = require('passport-local');
 const secret = process.env.secret || config.secret;
 
 //create local strategy
-const localOptions = {usernameField: 'email'};
-const localLogin = new LocalStrategy(localOptions, function(email, password, done){
+const localOptions = {usernameField: 'username'};
+const localLogin = new LocalStrategy(localOptions, function(username, password, done){
 // Verify this username and password, call done with user
 // if it is the correct email and password
 // otherwise, call done with false
-	User.findOne({email: email}, function(err, user){
+	User.findOne({username: username}, function(err, user){
 		if(err) {return done(err);}
 		if(!user) {return done(null, false);}
 

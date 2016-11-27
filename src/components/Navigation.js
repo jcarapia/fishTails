@@ -26,7 +26,7 @@ var Navigation = React.createClass({
 
 			      <ul className="nav navbar-nav navbar-right">
 			        <li><Link to="signup"><i className="fa fa-user-plus" aria-hidden="true"></i> Signup</Link></li>
-			        <li><Link to="signin"><i className="fa fa-user" aria-hidden="true"></i> Login</Link></li>
+			        <li><Link to="signin"><i className="fa fa-user" aria-hidden="true"></i> Signin</Link></li>
 			      </ul>
 			    </div>
 			    </div>

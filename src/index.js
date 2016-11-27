@@ -7,6 +7,7 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
 import Landing from './components/Landing';
+import Gallery from './components/Gallery';
 import About from './components/About';
 import Contact from './components/Contact';
 import Signin from './components/auth/Signin';
@@ -22,6 +23,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory}>
       <Route path="/" component={App}> 
+      	<Route path="gallery" component={Gallery} />
       	<Route path="about" component={About} />
       	<Route path="contact" component={Contact} />
   			<Route path="signin" component={Signin} />
