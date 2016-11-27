@@ -16,7 +16,7 @@ export function signupUser({username, email, password}){
 			})
 			.catch(error => dispatch(authError(error.response.data.error)));
 	}
-}
+};
 
 export function signinUser({username, password}){
 	console.log('signinUser()', username, password)
@@ -25,6 +25,17 @@ export function signinUser({username, password}){
 			.then(response => {
 				dispatch({type: AUTH_USER});
 				localStorage.setItem('token', response.data.token);
+				browserHistory.push('/gallery');
+			})
+			.catch(error => console.log(error.response.data.error));
+	}
+};
+
+export function addTale({title, story, picture}) {
+	console.log('addTale():', title, story, picture)
+	return function(dispatch) {
+		axios.post(`${ROOT_URL}/tales`, {title, story, picture})
+			.then(response => {
 				browserHistory.push('/gallery');
 			})
 			.catch(error => console.log(error.response.data.error));
