@@ -42,25 +42,18 @@ export function addTale({title, story, picture}) {
 	}
 };
 
-// export function fetchTales(){
-// 	//console.log('fetch tales action')
-// 	return function(dispatch){
-// 		axios.get(`${ROOT_URL}/tales`)
-// 			.then(response => {
-// 				console.log('fetchTales action: ',response.data)
-// 				dispatch({type: FETCH_TALES, payload: response.data});
-// 			})
-// 			.catch(error => console.log('error!!'));
-// 	}
-// }
-
+// An example using Redux-Promise. 
 export function fetchTales(){
-	//console.log('fetch tales action')
-
 	const tales =	axios.get(`${ROOT_URL}/tales`);
-
-	console.log('promise tales', tales)		
-	return {type: FETCH_TALES, payload: tales};
 	
-}
+	return {type: FETCH_TALES, payload: tales};
+};
+
+export function fetchTale(id){
+	const tale = axios.get(`${ROOT_URL}/tale`, id);
+
+	return {type: FETCH_TALE, payload: tale};
+};
+
+
 

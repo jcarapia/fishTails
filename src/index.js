@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import Signin from './components/auth/Signin';
 import Signup from './components/auth/Signup';
 import AddTale from './components/AddTale';
+import ShowTale from './components/ShowTale';
 
 import reducers from './reducers';
 
@@ -31,6 +32,7 @@ ReactDOM.render(
       	<Route path="addTale" component={AddTale} />
   			<Route path="signin" component={Signin} />
   			<Route path="signup" component={Signup} />
+  			<Route path="ShowTale" component={ShowTale} />
      		<IndexRoute component={Landing}/>
       </Route>      
     </Router>

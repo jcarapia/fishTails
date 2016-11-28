@@ -19,4 +19,6 @@ module.exports = function(app){
 	app.get('/tales', Tale.fetchTales);
 
 	app.post('/tales', Tale.addTale); // add authorization to this route
+
+	app.get('/tale', Tale.fetchTale);
 };

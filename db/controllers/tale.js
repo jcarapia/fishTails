@@ -9,7 +9,6 @@ exports.addTale = function(req, res, next) {
 		return res.status(422).send({error: 'You must provide title, picture and story'})
 	};
 
-	
 	const tale = new Tale({
 		title: title,
 		picture: picture,
@@ -30,7 +29,20 @@ exports.fetchTales = function(req, res) {
 		if(err) {
 			return next(err);
 		};
-
 		res.send(tales);
 	})
+};
+
+exports.fetchTale = function(req, res) {
+	const id = req.body.id;
+	Tale.findById(id, function(err, tale){
+		if(err){
+			return next(err);
+		};
+		res.send(tale);
+	})
 }
+
+
+
+

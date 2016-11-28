@@ -81,4 +81,37 @@ hr {
    margin-left: 5px;
 }
 
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.container.gallery {
+	border: solid 5px rgba(255, 71, 26, 0.6);
+	background-color: rgba(255, 255, 255, 0.4);
+	width: 95%;
+	height: 600px;
+	padding-bottom: 50%;
+	overflow: scroll;
+	display: flex; 
+	flex: wrap;
+	padding-top: 15px;
+}
+
+#addTale {
+	display: block;
+	width: 95%;
+	margin: 5px auto;
+
+
+
+}
+
 

@@ -1,7 +1,7 @@
 
-import {AUTH_USER, UNAUTH_USER, AUTH_ERROR, FETCH_TALES} from '../actions/types';
+import {AUTH_USER, UNAUTH_USER, AUTH_ERROR} from '../actions/types';
 
-const INITIAL_STATE = {authenticated: false, error:'', tales: []}
+const INITIAL_STATE = {}
 
 export default function(state=INITIAL_STATE, action) {
 	switch(action.type) {
@@ -11,9 +11,6 @@ export default function(state=INITIAL_STATE, action) {
 			return {...state, authenticated: false};
 		case AUTH_ERROR: 
 			return {...state, error: action.payload};
-		case FETCH_TALES: 
-			console.log('fetchtales payload: ', action.payload);
-			return {...state, tales: action.payload}		
 	}
 	return state;
 }

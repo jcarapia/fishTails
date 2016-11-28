@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router';
 import * as actions from '../actions';
+import Tale from './Tale';
 
 class Gallery extends Component {
 
-	componentDidMount(){
+	componentWillMount(){
 		this.props.fetchTales();
 	};
 
@@ -12,20 +14,21 @@ class Gallery extends Component {
 		console.log('tales', this.props.tales)
 		const tales = this.props.tales
 
-		function renderStories(){		
-			
-			if(tales.length > 0){
-
-				return tales[0].map(tale => <li>{tale.title}</li>)
-			}
-		}
+		function renderTales(){		
+			if(tales.tales){
+				const the_tales = tales.tales;
+				return the_tales.map(tale => <Tale key={tale._id} {...tale} />)
+			};
+		};
 		
 		return (
 			<div>
-				the Gallery
-				<ul>
-				{renderStories()}
-				</ul>
+			<Link to="addTale" className="btn btn-primary" id="addTale">New Fish Tale!</Link>
+			<div className="container gallery">
+				<div className="row text-center">		
+					{renderTales()};			
+				</div>					
+			</div>
 			</div>
 		)
 	}
@@ -33,7 +36,7 @@ class Gallery extends Component {
 
 function mapStateToProps(state) {
 	return {
-		tales: state.tale
+		tales: state.tales
 	}
 };
 
