@@ -82,11 +82,11 @@ hr {
 }
 
 .thumbnail img {
-    width: 100%;
+  width: 100%;
 }
 
 .thumbnail {
-    padding: 0;
+ 	padding: 0;
 }
 
 .thumbnail .caption-full {
@@ -109,9 +109,18 @@ hr {
 	display: block;
 	width: 95%;
 	margin: 5px auto;
-
-
-
 }
+
+.container.showTale {
+	border: solid 5px rgba(255, 71, 26, 0.6);
+	background-color: rgba(255, 255, 255, 0.4);
+	width: 75%;
+	height: 600px;
+	padding-bottom: 50%;
+	overflow: scroll;
+	padding-top: 15px;
+}
+
+
 
 
