@@ -2,23 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
-
-class ShowTale extends Component {
-	constructor(props){
-		super(props)
-
-		this.state = {tale: JSON.parse(localStorage.getItem('fishTail'))}
-	}
+class TaleShow extends Component {
 
 	componentWillMount(){
-		this.setState = JSON.parse(localStorage.getItem('fishTail'));
+		const id = this.props.params.id;
+		this.props.fetchTale(id);
 	}
 
 	renderTale(){
-		const tale = this.state.tale;
-		console.log('the tale: ', tale);
-		const {title, story, picture, author} = tale;
-
+		const {author, picture, story, title} = this.props.tale;
 		return (
 			<div className="thumbnail">
 				<img className="image-responsive" src={picture}/>
@@ -32,7 +24,16 @@ class ShowTale extends Component {
 	}
 
 	render() {
-		return(
+
+		if(!this.props.tale){
+			return (
+				<div>
+					Loading...
+				</div>
+			)
+		}
+
+		return (
 			<div className="container showTale">
 				<div className="row">
 					<div className="col-sm-12">
@@ -44,6 +45,10 @@ class ShowTale extends Component {
 	}
 };
 
-export default ShowTale;
+function mapStateToProps(state){
+	return{
+		tale: state.tales.currentTale
+	}
+}
 
-
+export default connect(mapStateToProps, actions)(TaleShow);

@@ -1,9 +1,12 @@
 const Tale = require('../models/tale');
 
 exports.addTale = function(req, res, next) {
+
+	//console.log('***********', req.body);
 	const title = req.body.title;
 	const picture = req.body.picture;
 	const story = req.body.story;
+	const author = req.body.author;
 
 	if(!title || !picture || !story ) {
 		return res.status(422).send({error: 'You must provide title, picture and story'})
@@ -12,7 +15,8 @@ exports.addTale = function(req, res, next) {
 	const tale = new Tale({
 		title: title,
 		picture: picture,
-		story: story
+		story: story,
+		author: author
 	});
 
 	tale.save(function(err){
@@ -20,7 +24,7 @@ exports.addTale = function(req, res, next) {
 			return next(err);
 		};
 
-		res.send('New tale successfully created!');
+		res.send(req.body);
 	});
 };
 
@@ -34,7 +38,7 @@ exports.fetchTales = function(req, res) {
 };
 
 exports.fetchTale = function(req, res) {
-	const id = req.body.id;
+	const id = req.params.id;
 	Tale.findById(id, function(err, tale){
 		if(err){
 			return next(err);

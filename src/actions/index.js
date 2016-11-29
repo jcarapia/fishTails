@@ -1,16 +1,16 @@
 import axios from 'axios';
 import {browserHistory} from 'react-router';
-import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_TALES} from './types';
+import {AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_TALES, FETCH_TALE} from './types';
 
-const ROOT_URL = 'http://pacific-fjord-58728.herokuapp.com';
-
+//const ROOT_URL = 'http://pacific-fjord-58728.herokuapp.com';
+const ROOT_URL = 'http://localhost:8080';
 
 export function signupUser({username, email, password}){
 	console.log('signupUser(): ',username, email, password)
 	return function(dispatch) {
 		axios.post(`${ROOT_URL}/signup`, {username, email, password})
 			.then(response => {
-				dispatch({type: AUTH_USER});
+				dispatch({type: AUTH_USER, payload: username});
 				localStorage.setItem('token', response.data.token);
 				browserHistory.push('/gallery');
 			})
@@ -23,7 +23,7 @@ export function signinUser({username, password}){
 	return function(dispatch){
 		axios.post(`${ROOT_URL}/signin`, {username, password})
 			.then(response => {
-				dispatch({type: AUTH_USER});
+				dispatch({type: AUTH_USER, payload: username});
 				localStorage.setItem('token', response.data.token);
 				browserHistory.push('/gallery');
 			})
@@ -31,10 +31,10 @@ export function signinUser({username, password}){
 	}
 };
 
-export function addTale({title, story, picture}) {
-	console.log('addTale():', title, story, picture)
+export function addTale({title, story, picture}, author) {
+	console.log('addTale():', title, story, picture, author)
 	return function(dispatch) {
-		axios.post(`${ROOT_URL}/tales`, {title, story, picture})
+		axios.post(`${ROOT_URL}/tales`, {author, title, story, picture})
 			.then(response => {
 				browserHistory.push('/gallery');
 			})
@@ -44,15 +44,22 @@ export function addTale({title, story, picture}) {
 
 // An example using Redux-Promise. 
 export function fetchTales(){
-	const tales =	axios.get(`${ROOT_URL}/tales`);
+	const response =	axios.get(`${ROOT_URL}/tales`);
 	
-	return {type: FETCH_TALES, payload: tales};
+	return {type: FETCH_TALES, payload: response};
 };
 
 export function fetchTale(id){
-	const tale = axios.get(`${ROOT_URL}/tale`, id);
-
-	return {type: FETCH_TALE, payload: tale};
+	console.log('fetchTale()',id )
+	return function(dispatch){
+		axios.get(`${ROOT_URL}/tales/${id}`).then(function(response) {
+			console.log('the tale/:id response',response)
+			dispatch({
+				type: FETCH_TALE,
+				payload: response.data
+			});		
+		})
+	}
 };
 
 

@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const taleSchema = new Schema({
 	title: String,
 	picture: String,
-	story: String
+	story: String,
+	author: String
 });
 
 const Tale = mongoose.model('tale', taleSchema);

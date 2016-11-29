@@ -6,7 +6,8 @@ import * as actions from '../actions';
 class AddTale extends Component {
 
 	handleFormSubmit(formProps){
-		this.props.addTale(formProps);
+		const loggedUser = this.props.loggedUser;
+		this.props.addTale(formProps, loggedUser);
 	};
 
 	render() { 
@@ -33,7 +34,13 @@ class AddTale extends Component {
 	}
 };
 
+function mapStateToProps(state){
+	return {
+		loggedUser: state.auth.user
+	}
+}
+
 export default reduxForm({
 	form: 'addTale',
 	fields: ['title', 'story', 'picture'],
-}, null, actions)(AddTale);
+}, mapStateToProps, actions)(AddTale);

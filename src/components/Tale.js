@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {Link} from 'react-router';
+import * as actions from '../actions';
 
 class Tale extends Component {
 
+	handleClick(){
+		const pictureId = this.props._id;
+		this.props.fetchTale(pictureId);
+	}
+
 	render() {
-
-		function handleClick(){
-			console.log(_id)
-		}
-
 		const {_id, title, story, picture} = this.props;
-
 		return (
 			<div className="col-md-2 col-sm-6">
 				<div className="thumbnail">
@@ -19,7 +20,7 @@ class Tale extends Component {
 						<h4>{title}</h4>
 				 	</div>
 				 	<p>
-				 		<Link onClick={handleClick} to="showTale" className="btn btn-primary">More Info</Link>
+				 		<Link onClick={this.handleClick.bind(this)} to={'gallery/' + _id} className="btn btn-primary">More Info</Link>
 				 	</p>
 				</div>
 			</div>
@@ -27,4 +28,4 @@ class Tale extends Component {
 	}
 };
 
-export default Tale;
+export default connect(null, actions)(Tale);
