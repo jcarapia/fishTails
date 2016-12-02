@@ -1,8 +1,32 @@
-var React = require('react');
-var {Link, IndexLink} = require('react-router');
+import React, {Component} from 'react';
+import {Link, IndexLink} from 'react-router';
+import {connect} from 'react-redux';
+import * as actions from '../actions';
 
-var Navigation = React.createClass({
-	render: function(){
+
+
+
+
+class Navigation extends Component {
+
+	renderAuthButtons() {
+		if(!this.props.auth){
+			return (
+				[
+					<li><Link to="signup"><i className="fa fa-user-plus" aria-hidden="true"></i> Signup</Link></li>,
+		    	<li><Link to="signin"><i className="fa fa-user" aria-hidden="true"></i> Signin</Link></li>
+		    ]
+			)
+		} else {
+			return (
+				 <li><Link to="/"><i className="fa fa-user-times" aria-hidden="true"></i> Log Out</Link></li>
+			)
+		}
+	};
+
+
+	render() {
+
 		return (
 			<nav className="navbar navbar-inverse">
 				<div className="container-fluid">
@@ -25,14 +49,21 @@ var Navigation = React.createClass({
 			      </ul>
 
 			      <ul className="nav navbar-nav navbar-right">
-			        <li><Link to="signup"><i className="fa fa-user-plus" aria-hidden="true"></i> Signup</Link></li>
-			        <li><Link to="signin"><i className="fa fa-user" aria-hidden="true"></i> Signin</Link></li>
+			        {this.renderAuthButtons()}
 			      </ul>
 			    </div>
 			    </div>
 			</nav>
 		)
 	}
-});
+};
 
-module.exports = Navigation;
+function mapStateToProps(state){
+	return { 
+		auth: state.auth.authenticated
+	}
+}
+
+export default connect(mapStateToProps, actions)(Navigation);
+
+
