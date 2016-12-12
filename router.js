@@ -21,7 +21,7 @@ module.exports = function(app){
 
 	app.post('/isAuth', function(req, res){
 		if(req.isAuthenticated()){
-			res.send(true);
+			res.send({auth: true, user: req.user.username});
 		} else {
 			res.send(false);
 		}

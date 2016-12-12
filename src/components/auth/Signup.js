@@ -17,7 +17,7 @@ class Signup extends Component {
 		const {handleSubmit, fields: {username, email, password, passwordConfirm}} = this.props;
 
 		return (
-			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+			<form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} >
 				<fieldset className="form-group">
 					<label>Username:</label>
 					<input className="form-control" {...username}/>

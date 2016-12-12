@@ -28,9 +28,10 @@ const store = createStoreWithMiddleware(reducers);
 //require('./style/style');
 
 axios.post('/isAuth').then(response => {
-	console.log('auth status: ', response.data);
-	if(response.data){
-			store.dispatch({type: AUTH_USER});
+	console.log('auth status: ', response);
+	if(response.data.auth){
+			console.log(response.user)
+			store.dispatch({type: AUTH_USER, payload: response.data.user});
 		}
 
 	ReactDOM.render(

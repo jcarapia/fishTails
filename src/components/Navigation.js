@@ -10,7 +10,7 @@ import * as actions from '../actions';
 class Navigation extends Component {
 
 	renderAuthButtons() {
-		if(!this.props.auth){
+		if(!this.props.auth.authenticated){
 			return (
 				[
 					<li><Link to="signup"><i className="fa fa-user-plus" aria-hidden="true"></i> Signup</Link></li>,
@@ -18,8 +18,9 @@ class Navigation extends Component {
 		    ]
 			)
 		} else {
+			const signedinUser = this.props.auth.user
 			return (
-				 <li><Link to="/"><i className="fa fa-user-times" aria-hidden="true"></i> Log Out</Link></li>
+				 <li><Link to="/"><span id="welcomeUser">Welcome {signedinUser}!</span><i className="fa fa-user-times" aria-hidden="true"></i> Log Out</Link></li>
 			)
 		}
 	};
@@ -60,7 +61,7 @@ class Navigation extends Component {
 
 function mapStateToProps(state){
 	return { 
-		auth: state.auth.authenticated
+		auth: state.auth
 	}
 }
 
