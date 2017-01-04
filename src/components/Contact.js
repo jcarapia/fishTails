@@ -8,8 +8,6 @@ class Contact extends Component{
 				
 				<p className="title">About Jorge Carapia</p>
 
-				<hr></hr>
-
 				<div className="text">
 
 				<div>
@@ -24,7 +22,11 @@ class Contact extends Component{
 						edible forager to name a few. I'm always on the lookout for the next adventure or 
 						taking a current one to the next level.  
 					</p>
-					
+
+				</div>
+				
+				<div className="social-media">
+					This is where the social-media icons will go
 				</div>
 
 			</div>
