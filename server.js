@@ -14,7 +14,7 @@ var passportLocalMongoose = require("passport-local-mongoose");
 var User = require("./db/models/user");
 var Tale = require("./db/models/tale");
 
-const secret = process.env.secret || config.secret
+const secret_phrase = process.env.secret || config.secret
 
 const port = process.env.PORT || 8080;
 const app = express();
