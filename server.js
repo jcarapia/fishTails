@@ -26,7 +26,7 @@ mongoose.connect('mongodb://'+username+':'+password+'@ds111188.mlab.com:11188/fi
 
 // App setup
 app.use(require("express-session")({
-    secret: secret_phrase,
+    secret: 'this is the secret',
     resave: false,
     saveUninitialized: false
 }));
