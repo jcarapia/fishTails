@@ -17,14 +17,14 @@ class Contact extends Component{
 				</div>
 
 					<p className="paragraph1">
-						Engineer by trade, adventurer by heart. <br> This is how I would describe myself.
+						Engineer by trade, adventurer by heart. This is how I would describe myself.
 						When I am not working on my next application of learning a new technology or cool 
 						algorithm I am planning my next adventure. I'm an avid freediver, spearfisher,
 						sea kayaker, trail runner,off-roader, mountain biker, hiker, camper, mushroom hunter and wild 
 						edible forager to name a few. I'm always on the lookout for the next adventure or 
 						taking a current one to the next level.  
 					</p>
-
+					
 				</div>
 
 			</div>
