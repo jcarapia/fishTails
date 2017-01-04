@@ -9,7 +9,7 @@ const router = require('./router');
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
-const config = require('./config');
+//const config = require('./config');
 
 var User = require("./db/models/user");
 var Tale = require("./db/models/tale");
