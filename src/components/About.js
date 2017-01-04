@@ -12,24 +12,25 @@ class About extends Component {
 				<div className="text">
 
 					<p className="paragraph1">
-					Copper mug austin art party literally blue bottle gochujang. PBR&B vaporware skateboard portland yr, 
-					banjo cray shabby chic meh. Kombucha roof party iceland, craft beer godard tbh sriracha unicorn next level 
-					ethical gochujang irony. 
+					Welcome to fishTails! fishTails is an awesome application that will allow you to 
+					share your fishing tales and pictures with the world. Getting started is quite simple. 
+					Signing up will provide you access to create a new tale. Once signed in, you can write 
+					your tale and share a picture by entering the url since at the moment the site does not
+					support file uploads.
 					</p>
 
 					<p>
-					Skateboard hella chillwave, lomo bicycle rights franzen tacos lumbersexual kitsch vinyl sartorial crucifix 
-					church-key. Hammock coloring book locavore lumbersexual synth street art, paleo jean shorts bushwick trust fund 
-					af cardigan skateboard activated charcoal. 
+				   Why did I build fishTails&#63; I wanted to combine my passions &#45; fishing, adventures, 
+					 and using technology to bring people together and share knowledge, ideas and stories. 
+					 I hope you get as much enjoyment using the site as I did building it.
 					</p>
 
 					<p>
-					Williamsburg affogato tumeric irony 3 wolf moon hammock, celiac fanny pack farm-to-table normcore everyday carry.
-					 Selfies lomo ennui small batch gluten-free tofu. 
+					  As for the technical details behind fishTails. It is built using React & Redux with 
+						MongoDB as the database and NodeJS as a backend environment. For the styling, I utilized
+						Bootstrap. 
 					</p>
 				</div>
-
-
 
 			</div>
 		)

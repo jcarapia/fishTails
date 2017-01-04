@@ -17,21 +17,14 @@ class Contact extends Component{
 				</div>
 
 					<p className="paragraph1">
-					Copper mug austin art party literally blue bottle gochujang. PBR&B vaporware skateboard portland yr, 
-					banjo cray shabby chic meh. Kombucha roof party iceland, craft beer godard tbh sriracha unicorn next level 
-					ethical gochujang irony. 
+						Engineer by trade, adventurer by heart. <br> This is how I would describe myself.
+						When I am not working on my next application of learning a new technology or cool 
+						algorithm I am planning my next adventure. I'm an avid freediver, spearfisher,
+						sea kayaker, trail runner,off-roader, mountain biker, hiker, camper, mushroom hunter and wild 
+						edible forager to name a few. I'm always on the lookout for the next adventure or 
+						taking a current one to the next level.  
 					</p>
 
-					<p>
-					Skateboard hella chillwave, lomo bicycle rights franzen tacos lumbersexual kitsch vinyl sartorial crucifix 
-					church-key. Hammock coloring book locavore lumbersexual synth street art, paleo jean shorts bushwick trust fund 
-					af cardigan skateboard activated charcoal. 
-					</p>
-
-					<p>
-					Williamsburg affogato tumeric irony 3 wolf moon hammock, celiac fanny pack farm-to-table normcore everyday carry.
-					 Selfies lomo ennui small batch gluten-free tofu. 
-					</p>
 				</div>
 
 			</div>
