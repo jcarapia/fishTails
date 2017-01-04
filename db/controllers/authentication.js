@@ -2,7 +2,7 @@ const User = require('../models/user');
 const config = require('../../config');
 const passport = require('passport');
 
-const secret = process.env.secret || config.secret
+//const secret = process.env.secret || config.secret
 
 // exports.signin = function(req, res, next) {
 // 	//user has already had their emal and password auth'd

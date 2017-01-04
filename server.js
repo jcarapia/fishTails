@@ -14,6 +14,8 @@ const config = require('./config');
 var User = require("./db/models/user");
 var Tale = require("./db/models/tale");
 
+const secret = process.env.secret || config.secret
+
 const port = process.env.PORT || 8080;
 const app = express();
 
@@ -24,7 +26,7 @@ mongoose.connect('mongodb://'+username+':'+password+'@ds111188.mlab.com:11188/fi
 
 // App setup
 app.use(require("express-session")({
-    secret: 'this is the secret phrase',
+    secret: secret_phrase,
     resave: false,
     saveUninitialized: false
 }));
