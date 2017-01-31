@@ -6,7 +6,7 @@ class Landing extends Component {
 	return (
 		<div id="content">
 			<h1>fishTails</h1>
-			<button className="btn btn-success">Click to Start!</button>
+			<Link to="/gallery"><button className="btn btn-success">Click to Start!</button></Link>
 		</div>
 	)
 }
